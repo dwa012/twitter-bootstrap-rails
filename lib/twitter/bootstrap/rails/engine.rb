@@ -29,7 +29,7 @@ module Twitter
           NavbarHelper,
           BadgeLabelHelper].each do |h|
             app.config.to_prepare do
-              ActionController::Base.send :helper, h
+              ActionView::Helpers::FormBuilder.send :include, h
             end
           end
           ActionView::Helpers::FormBuilder.send :include, FormErrorsHelper
